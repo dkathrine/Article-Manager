@@ -6,6 +6,23 @@ export const HomePage = () => {
 
   const { data: articles, isPending: loading, error } = useFetch(url);
 
+  const handleDelete = async(id) => {
+    try {
+      const options = {
+          method: 'DELETE',
+      }
+      const response = await fetch(`${url}/${id}`, options);
+      const data = await response.json();
+
+      console.log(data);
+
+      window.location.reload(true);
+    } catch (error) {
+        console.log(error.message);
+    }
+    
+  }
+
   return (
     <div className="home">
       <h1>HomePage</h1>
@@ -16,6 +33,7 @@ export const HomePage = () => {
           <h2>{article.title}</h2>
           <p>{article.author}</p>
           <Link to={`/articles/${article.id}`}>Read more...</Link>
+          <button className="deleteBtn" onClick={() => handleDelete(article.id)}>Delete</button>
         </div>
       ))}
     </div>

@@ -2,8 +2,8 @@ import "./App.css";
 import {
   BrowserRouter,
   Route,
-  Switch,
-  Redirect,
+  Routes,
+  Navigate,
 } from "react-router-dom";
 import { About, Contact, Home, Article, Form, SuccessPage } from "./pages/index";
 import Navbar from "./components/Navbar";
@@ -14,32 +14,21 @@ function App() {
       <BrowserRouter>
         <Navbar />
 
-        <Switch>
-          <Route exact path="/" component={Home} />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
 
-          <Route path="/about">
-            <About />
-          </Route>
+          <Route path="/about" element={<About />} />
 
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/articles/:id">
-            <Article />
-          </Route>
+          <Route path="/contact" element={<Contact />} />
 
-          <Route path="/form">
-            <Form />
-          </Route>
+          <Route path="/articles/:id" element={<Article />} />
 
-          <Route path="/success">
-            <SuccessPage />
-          </Route>
+          <Route path="/form" element={<Form />} />
 
-          <Route path="*">
-            <Redirect to="/" />
-          </Route>
-        </Switch>
+          <Route path="/success" element={<SuccessPage />} />
+
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );

@@ -1,11 +1,11 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { usePost as postRequest } from "../hooks/usePost";
 import './styles/Form.css';
 
 const ContactPage = () => {
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -22,7 +22,7 @@ const ContactPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     postRequest(url, data);
-    history.push(`/success?name=${name}`);
+    history(`/success?name=${name}`);
 }
 
 
