@@ -32,7 +32,6 @@ The only prerequisites that are needed are Node Package Manager (npm) and json-s
 
 npm install npm@latest -g
 
-
 ```
 
 * json-server
@@ -51,7 +50,7 @@ npm install -g json-server
 
 ```sh
 
-git clone https://github.com/github_username/repo_name.git
+git clone https://github.com/dkathrine/Article-Manager
 
 ```
 
@@ -70,9 +69,13 @@ npm install
 json-server --watch ./data/db.json --port 4000
 
 ```
+
 4. Start your live-server
+
 ```sh
+
 npm start
+
 ```
   
 
@@ -118,15 +121,13 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Kathrine B - [@dkathrine](https://github.com/dkathrine) - kathrinebeuth@web.de
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/dkathrine/Article-Manager](https://github.com/dkathrine/Article-Manager)
 
   
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 
