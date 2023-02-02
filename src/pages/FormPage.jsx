@@ -1,10 +1,10 @@
 import {useState} from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { usePost as postRequest } from '../hooks/usePost';
 import './styles/Form.css'
 
 const FormPage = () => {
-    const history = useHistory();
+    const history = useNavigate();
 
     const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
@@ -17,7 +17,7 @@ const FormPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         postRequest(url, data);
-        history.push(`/success?name=${author}`);
+        history(`/success?name=${author}`);
     }
 
   return (
